@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarOS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #001f3f;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .rounded-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #00008b; /* Dunkelblau */
+    border: none;
+    border-radius: 25px; /* Abgerundete Ecken */
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.rounded-button:hover {
+    background-color: #0000cd; /* Hellere Blauton bei Hover */
+}
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #001f3f;
+            border-radius: 8px;
+        }
+        h1, h4 {
+            margin: 0;
+        }
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+            border-radius: 4px;
+        }
+        .menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 1rem;
+            border-radius: 8px;
+            animation: slideIn 0.5s ease-out;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0.5rem 0;
+            animation: slideIn 0.5s ease-out;
+        }
+        .menu a:hover {
+            text-decoration: underline;
+
+        }
+        .content {
+            padding: 2rem;
+            border-radius: 8px;
+            animation: flyIn 1s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes flyIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .images {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        .images img {
+            max-width: 200px;
+            border-radius: 8px;
+        }
+        .social-media {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+        }
+        .social-media a {
+            color: white;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+        .social-media a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <div>
+            <h1>StarOS</h1>
+            <h4>the best os.</h4>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu">
+            <a href="/index.html">Home</a>
+            <a href="downloads/">Downloads</a>
+            <a href="#">Docs</a>
+            <a href="#">FAQ</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+    <div class="content">
+        <a href="" class="rounded-button">Windows 11 (optimized)</a>
+        <a href="" class="rounded-button">Windows 10</a>
+        <p>By installing you accept the TOS</p>
+        <div class="images">
+        </div>
+    </div>
+    <div class="social-media">
+        <a href="#">YouTube</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+    </div>
+</body>
+</html>
